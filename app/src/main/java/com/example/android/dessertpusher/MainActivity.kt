@@ -27,6 +27,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.LifecycleObserver
 import com.example.android.dessertpusher.databinding.ActivityMainBinding
 
+import android.util.Log
+
 class MainActivity : AppCompatActivity(), LifecycleObserver {
 
     private var revenue = 0
@@ -65,6 +67,7 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // TODO (01) Add an info level log statement here
+        Log.i("MainActivity", "onCreate called")
 
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -149,4 +152,9 @@ class MainActivity : AppCompatActivity(), LifecycleObserver {
     }
 
     // TODO (02) Override the onStart lifecycle method and add an info level log statement
+    override fun onStart()
+    {
+        super.onStart()
+        Log.i("MainActivity", "onStart called")
+    }
 }
